@@ -34,11 +34,11 @@ namespace Xamarin.Android.BarcodeScanner
     [Activity]
     public class ScannerActivity : AppCompatActivity
     {
+        private const int CameraRequestCode = 100;
         private static Queue<BarcodeActivityTransferModel> _barcodeActivityTransferModelQueue = new Queue<BarcodeActivityTransferModel>();
         
         internal static void StartActivity(Context context, BarcodeActivityTransferModel model)
         {
-            
             var intent = new Intent(context, typeof(ScannerActivity));
             _barcodeActivityTransferModelQueue.Enqueue(model);
             context.StartActivity(intent);
@@ -57,12 +57,15 @@ namespace Xamarin.Android.BarcodeScanner
         protected override async void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
             _previewView = new PreviewView(this);
             _previewView.LayoutParameters = new PreviewView.LayoutParams(PreviewView.LayoutParams.MatchParent, PreviewView.LayoutParams.MatchParent);
-            _previewView.SetBackgroundColor(Color.Aqua);
+            _previewView.SetBackgroundColor(Color.Black);
             _previewView.SetForegroundGravity(GravityFlags.Center);
             SetContentView(_previewView);
+
+            if (CheckSelfPermission(Manifest.Permission.Camera) != Permission.Granted) {
+                RequestPermissions(new [] { Manifest.Permission.Camera }, CameraRequestCode);
+            }
             
             SupportActionBar?.Hide();
 
