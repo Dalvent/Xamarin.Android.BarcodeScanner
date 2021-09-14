@@ -17,7 +17,7 @@
         <AndroidResgenClass>Resource</AndroidResgenClass>
         <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
         <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
-        <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
+        <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
         <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
         <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
         <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
@@ -99,9 +99,9 @@
         <PackageReference Include="Xamarin.GooglePlayServices.MLKit.BarcodeScanning" Version="116.1.5" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\Xamarin.Android.BarcodeScanner\Xamarin.Android.BarcodeScanner.csproj">
-        <Project>{85c5d4b8-0375-4933-a9bd-e53e272045d1}</Project>
-        <Name>Xamarin.Android.BarcodeScanner</Name>
+      <ProjectReference Include="..\Xamarin.BarcodeScanner.Android\Xamarin.BarcodeScanner.Android.csproj">
+        <Project>{35f24ced-aeb6-4138-bab3-71bb03e4042d}</Project>
+        <Name>Xamarin.BarcodeScanner.Android</Name>
       </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

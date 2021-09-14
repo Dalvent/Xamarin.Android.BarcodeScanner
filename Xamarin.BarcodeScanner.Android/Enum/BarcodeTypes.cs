@@ -1,4 +1,4 @@
-﻿namespace GoogleVisionBarCodeScanner
+﻿namespace Xamarin.BarcodeScanner.Android.Enum
 {
     public enum BarcodeTypes
     {

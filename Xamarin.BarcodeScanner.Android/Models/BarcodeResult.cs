@@ -1,4 +1,6 @@
-﻿namespace GoogleVisionBarCodeScanner
+﻿using Xamarin.BarcodeScanner.Android.Enum;
+
+namespace Xamarin.BarcodeScanner.Android.Models
 {
     public class BarcodeResult
     {
